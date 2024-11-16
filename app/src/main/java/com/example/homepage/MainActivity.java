@@ -1,5 +1,6 @@
 package com.example.homepage; // Replace with your package name
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,18 +14,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main); // Load your XML layout
 
         // Set an OnClickListener for the "Learn More" TextView
-        TextView learnMoreTextView = findViewById(R.id.learn_more);
+        TextView learnMoreTextView = findViewById(R.id.learn_more_button);
         learnMoreTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the click event here
-                // For example, display a message or start a new activity
-                // You can use a Toast or open a new Activity
-                // Toast.makeText(MainActivity.this, "Learn More clicked", Toast.LENGTH_SHORT).show();
-
-                // Or navigate to a new activity
-                // Intent intent = new Intent(MainActivity.this, LearnMoreActivity.class);
-                // startActivity(intent);
+                // Navigate to the next activity when clicked
+                Intent intent = new Intent(MainActivity.this, LearnMore.class); // Replace NextActivity.class with your desired activity
+                startActivity(intent);
             }
         });
     }
